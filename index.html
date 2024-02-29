@@ -1,7 +1,87 @@
-<html>
-  <body>
-    <h1>
-      hello world
-    </h1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="utilities.css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+    rel="stylesheet" />
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <title>Alexandros & Rania Wedding</title>
+</head>
+
+<body>
+  <main class="main">
+
+    <section class="section section-rsvp">
+
+      <div class="rsvp-outer">
+        <div class="rsvp-inner">
+          <div class="rsvp-inner-header">
+
+            <h2 class="rsvp-title">
+              Θα έρθετε;
+            </h2>
+          </div>
+          <div class="rsvp-inner-content">
+
+            <div class="container">
+              <form class="rsvp-form">
+                <div class="form-group">
+                  <div class="radio-group-wrapper">
+                    <label>
+                      <input type="radio" name="presence" value="yes" checked>
+                      <div class="form-label">Ναι θα έρθω</div>
+                    </label>
+                    <label>
+                      <input type="radio" name="presence" value="no">
+                      <div class="form-label">Όχι δεν θα τα καταφέρω</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group form-group-input">
+                  <label>
+                    <div class="form-label jsCustomPlaceholder">Ονοματεπώνυμο</div>
+                    <input class="form-control" type="text" name="guest_name" required>
+                  </label>
+                </div>
+                <h3 class="rsvp-question">Θα έχετε μαζί σας συνοδό;</h3>
+                <div class="form-group">
+                  <div class="radio-group-wrapper">
+
+                    <label>
+                      <input type="radio" name="companion_presence" value="yes" checked>
+                      <div class="form-label">Ναι θα έρθω με παρέα</div>
+                    </label>
+                    <label>
+                      <input type="radio" name="companion_presence" value="no">
+                      <div class="form-label">Όχι θα έρθω μόνος</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group form-group-input">
+                  <label>
+                    <div class="form-label jsCustomPlaceholder">Ονοματεπώνυμο συνοδού</div>
+                    <input class="form-control" type="text" name="companion_name">
+                  </label>
+                </div>
+                <div class="form-group">
+                  <input class="form-control" type="submit" class="button" value="Αποστολή">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+</body>
+
 </html>
