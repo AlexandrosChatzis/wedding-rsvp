@@ -25,7 +25,7 @@
           <div class="rsvp-inner-header">
 
             <h2 class="rsvp-title">
-              Θα έρθετε;
+              Θα παρευρεθείτε;
             </h2>
           </div>
           <div class="rsvp-inner-content">
@@ -35,19 +35,21 @@
                 <div class="form-group">
                   <div class="radio-group-wrapper">
                     <label>
-                      <input type="radio" name="presence" value="yes" checked>
+                      <input type="radio" name="presence" value="yes">
                       <div class="form-label">Ναι θα έρθω</div>
                     </label>
                     <label>
-                      <input type="radio" name="presence" value="no">
+                      <input type="radio" name="presence" value="no" checked>
                       <div class="form-label">Όχι δεν θα τα καταφέρω</div>
                     </label>
                   </div>
                 </div>
                 <div class="form-group form-group-input">
                   <label>
-                    <div class="form-label jsCustomPlaceholder">Ονοματεπώνυμο</div>
-                    <input class="form-control" type="text" name="guest_name" required>
+                    <div class="form-label jsCustomPlaceholder pointer-none">Ονοματεπώνυμο
+                    </div>
+                    <input class="form-control" type="text" name="guest_name" title="Αυτό το πεδίο είναι υποχρεωτικό"
+                      required>
                   </label>
                 </div>
                 <h3 class="rsvp-question">Θα έχετε μαζί σας συνοδό;</h3>
@@ -55,23 +57,24 @@
                   <div class="radio-group-wrapper">
 
                     <label>
-                      <input type="radio" name="companion_presence" value="yes" checked>
+                      <input type="radio" name="companion_presence" value="yes">
                       <div class="form-label">Ναι θα έρθω με παρέα</div>
                     </label>
                     <label>
-                      <input type="radio" name="companion_presence" value="no">
+                      <input type="radio" name="companion_presence" value="no" checked>
                       <div class="form-label">Όχι θα έρθω μόνος</div>
                     </label>
                   </div>
                 </div>
                 <div class="form-group form-group-input">
                   <label>
-                    <div class="form-label jsCustomPlaceholder">Ονοματεπώνυμο συνοδού</div>
-                    <input class="form-control" type="text" name="companion_name">
+                    <div class="form-label jsCustomPlaceholder pointer-none">Ονοματεπώνυμο συνοδού</div>
+                    <input class="form-control" type="text" name="companion_name"
+                      title="Αυτό το πεδίο είναι υποχρεωτικό">
                   </label>
                 </div>
-                <div class="form-group">
-                  <input class="form-control" type="submit" class="button" value="Αποστολή">
+                <div class="form-group text-right">
+                  <input class="button" type="submit" class="button" value="ΑΠΟΣΤΟΛΗ">
                 </div>
               </form>
             </div>
