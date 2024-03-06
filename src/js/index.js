@@ -1,3 +1,6 @@
+import jQuery from "jquery";
+import "../sass/style.scss";
+
 jQuery(document).ready(function ($) {
   $(".form-group input").each(function () {
     var $input = $(this);
@@ -45,6 +48,8 @@ jQuery(document).ready(function ($) {
       if (companionPresence.val() === "yes")
         companionName.attr("disabled", false);
     } else {
+      $("input[name='companion_presence'][value='no'").prop("checked", true);
+
       $("input[name='companion_presence']").attr("disabled", true);
       $("input[name='companion_name']")
         .attr("disabled", true)
@@ -81,7 +86,6 @@ jQuery(document).ready(function ($) {
 
   $("form").on("submit", function (event) {
     event.preventDefault();
-    //https://docs.google.com/forms/d/e/1FAIpQLSfMlbXeLoOHHnpex-nYEF8v824OnXi_NLhlhwNnCxFffZcgPA/formResponse?&submit=Submit?usp=pp_url&entry.1597741806=re&entry.877086558=yes&entry.1588402917=no&entry.2141206115=xasd
     const formDataArray = $(this).serializeArray();
 
     let formData = {};
@@ -89,21 +93,18 @@ jQuery(document).ready(function ($) {
       formData[field.name] = field.value;
     });
 
-    const { guest_name = "" } = formData;
-    const { presence = "no" } = formData;
-    const { companion_presence = "no" } = formData;
-    const { companion_name = "" } = formData;
+    const { API_KEY, SPREADSHEET_ID, SCOPE } = process.env;
 
-    $.ajax({
-      url: `https://docs.google.com/forms/d/e/1FAIpQLSfMlbXeLoOHHnpex-nYEF8v824OnXi_NLhlhwNnCxFffZcgPA/formResponse?&submit=Submit?usp=pp_url&entry.1597741806=${guest_name}&entry.877086558=${presence}&entry.1588402917=${companion_presence}&entry.2141206115=${companion_name}`,
-      type: "POST",
-      // data: formData,
-      success: function (response) {
-        // Print the response
+    fetch(`https://api.sheetson.com/v2/sheets/${SCOPE}`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
+        "X-Spreadsheet-Id": SPREADSHEET_ID,
+        "Content-Type": "application/json",
       },
-      error: function (xhr, status, error) {
-        // Handle errors
-      },
-    });
+      body: JSON.stringify(formData),
+    })
+      .then((r) => r.json())
+      .then(() => alert("Ευχαριστούμε για την απάντηση σας"));
   });
 });
