@@ -104,7 +104,13 @@ jQuery(document).ready(function ($) {
       },
       body: JSON.stringify(formData),
     })
-      .then((r) => r.json())
-      .then(() => alert("Ευχαριστούμε για την απάντηση σας"));
+      .then((response) => response.json())
+      .then((response) => {
+        if (response && !!response.type && response.type === "SheetsonError") {
+          alert("Κάτι πήγε στραβά επικοινωνήστε με τον προγραμματιστή.");
+          return;
+        }
+        alert("Ευχαριστούμε για την απάντηση σας");
+      });
   });
 });
