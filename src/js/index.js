@@ -86,6 +86,11 @@ jQuery(document).ready(function ($) {
 
   $("form").on("submit", function (event) {
     event.preventDefault();
+    const submitBtn = $(".jsSubmit");
+    const spinner = submitBtn.find(".spinner");
+    submitBtn.attr("disabled", true);
+    spinner.addClass("spinner--visible");
+
     const formDataArray = $(this).serializeArray();
 
     let formData = {};
@@ -111,6 +116,8 @@ jQuery(document).ready(function ($) {
           return;
         }
         alert("Ευχαριστούμε για την απάντηση σας");
+        submitBtn.attr("disabled", false);
+        spinner.removeClass("spinner--visible");
       });
   });
 });
