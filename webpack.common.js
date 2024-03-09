@@ -31,7 +31,7 @@ module.exports = {
       filename: "index.html",
       alwaysWriteToDisk: true,
       template: "src/index.html",
-      recaptchaKey: process.env.RECAPTCA_KEY,
+      recaptchaKey: process.env.RECAPTCHA_KEY,
     }),
     new HtmlWebpackHarddiskPlugin(),
     new MiniCssExtractPlugin(),
