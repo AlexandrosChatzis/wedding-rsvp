@@ -1,5 +1,6 @@
 import jQuery from "jquery";
-import "../sass/style.scss";
+import "../sass/core.scss";
+import "../sass/vendor.scss";
 
 jQuery(document).ready(function ($) {
   $(".form-group input").each(function () {
@@ -86,6 +87,11 @@ jQuery(document).ready(function ($) {
 
   $("form").on("submit", function (event) {
     event.preventDefault();
+    const response = grecaptcha.getResponse();
+    if (response === "") {
+      alert("Παρακαλώ επιβεβαιώστε ότι δεν είστε ρομπότ.");
+      return;
+    }
     const submitBtn = $(".jsSubmit");
     const spinner = submitBtn.find(".spinner");
     submitBtn.attr("disabled", true);
@@ -100,24 +106,32 @@ jQuery(document).ready(function ($) {
 
     const { API_KEY, SPREADSHEET_ID, SCOPE } = process.env;
 
-    fetch(`https://api.sheetson.com/v2/sheets/${SCOPE}`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${API_KEY}`,
-        "X-Spreadsheet-Id": SPREADSHEET_ID,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        if (response && !!response.type && response.type === "SheetsonError") {
-          alert("Κάτι πήγε στραβά επικοινωνήστε με τον προγραμματιστή.");
-          return;
-        }
-        alert("Ευχαριστούμε για την απάντηση σας");
-        submitBtn.attr("disabled", false);
-        spinner.removeClass("spinner--visible");
-      });
+    try {
+      fetch(`https://api.sheetson.com/v2/sheets/${SCOPE}`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${API_KEY}`,
+          "X-Spreadsheet-Id": SPREADSHEET_ID,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => response.json())
+        .then((response) => {
+          if (
+            response &&
+            !!response.type &&
+            response.type === "SheetsonError"
+          ) {
+            alert("Κάτι πήγε στραβά επικοινωνήστε με τον προγραμματιστή.");
+            return;
+          }
+          alert("Ευχαριστούμε για την απάντηση σας");
+          submitBtn.attr("disabled", false);
+          spinner.removeClass("spinner--visible");
+        });
+    } catch (error) {
+      alert("Κάτι πήγε στραβά επικοινωνήστε με τον προγραμματιστή.");
+    }
   });
 });

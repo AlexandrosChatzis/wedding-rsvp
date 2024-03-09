@@ -1,0 +1,47 @@
+/* ==========================================================================
+    SCSS FUNCTIONS [INTERNAL]
+   ========================================================================== */
+
+/**
+ * Replaces substring on a string variable
+ */
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    $searchString: $string;
+    $newString: "";
+    $end: "";
+
+    @while $index {
+      $start: str-slice($searchString, 1, $index - 1);
+      $end: str-slice($searchString, $index + str-length($search));
+      $searchString: $end;
+      $index: str-index($searchString, $search);
+      $newString: $newString + $start + $replace;
+    }
+
+    @return $newString + $end;
+  }
+
+  @return $string;
+}
+
+/**
+ * Splits a string with a specific separator
+ */
+@function str-split($string, $separator) {
+  $split-arr: ();
+  $index: str-index($string, $separator);
+
+  @while $index != null {
+    $item: str-slice($string, 1, $index - 1);
+    $split-arr: append($split-arr, $item);
+    $string: str-slice($string, $index + 1);
+    $index: str-index($string, $separator);
+  }
+
+  $split-arr: append($split-arr, $string);
+
+  @return $split-arr;
+}

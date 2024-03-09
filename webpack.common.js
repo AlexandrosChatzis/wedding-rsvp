@@ -16,7 +16,7 @@ module.exports = {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "build"),
     clean: true,
-    assetModuleFilename: "assets/img/[name][ext][query]", // without this assets used in js/css will go to main dir
+    assetModuleFilename: "assets/images/[name][ext][query]", // without this assets used in js/css will go to main dir
   },
   module: {
     rules: [
@@ -31,6 +31,7 @@ module.exports = {
       filename: "index.html",
       alwaysWriteToDisk: true,
       template: "src/index.html",
+      recaptchaKey: process.env.RECAPTCA_KEY,
     }),
     new HtmlWebpackHarddiskPlugin(),
     new MiniCssExtractPlugin(),
