@@ -188,7 +188,7 @@
         function renderRecaptcha() {
             grecaptcha.ready(function () {
                 grecaptcha.render("g-recaptcha", {
-                    sitekey: '<%= htmlWebpackPlugin.options.recaptchaKey %>', // Replace 'YOUR_SITE_KEY_HERE' with your actual site key
+                    sitekey: '<%= htmlWebpackPlugin.options.recaptchaKey %>',
                 });
             });
         }
