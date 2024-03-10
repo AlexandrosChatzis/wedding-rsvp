@@ -59,13 +59,13 @@ $utils: (
 /* ========================================================== */
 /* 			            04. breakpoints                           */
 /* ========================================================== */
-$max-xs: 360px !default;
+$max-xs: 400px !default;
 $max-sm: 500px !default;
 $max-md: 768px !default;
 $max-lg: 1024px !default;
 $max-xl: 1366px !default;
 
-$min-xs: 360.01px !default;
+$min-xs: 400.01px !default;
 $min-sm: 500.01px !default;
 $min-md: 768.01px !default;
 $min-lg: 1024.01px !default;
@@ -76,10 +76,12 @@ $breakpoints: (
   "lg": $max-lg,
   "md": $max-md,
   "sm": $max-sm,
+  "xs": $max-xs,
 ) !default;
 
 @if $mobile-first {
   $breakpoints: (
+    "xs": $min-xs,
     "sm": $min-sm,
     "md": $min-md,
     "lg": $min-lg,
@@ -101,6 +103,7 @@ $breakpoints: (
   --black: #000;
   --green: #657150;
   --grey: #444;
+  --pink: #edd8bf;
   /* layout */
   --container-width: 1440px;
   --container-pad: min(10px, 40px);

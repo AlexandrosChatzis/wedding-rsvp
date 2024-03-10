@@ -134,4 +134,31 @@ jQuery(document).ready(function ($) {
       alert("Κάτι πήγε στραβά επικοινωνήστε με τον προγραμματιστή.");
     }
   });
+
+  const futureDate = new Date(2024, 8, 7, 19, 0, 0);
+
+  function updateTimer() {
+    const currentDate = new Date();
+    const timeDifference = futureDate - currentDate;
+
+    if (timeDifference <= 0) {
+      clearInterval(timerInterval);
+      $(".counter-subtitle").text("Παρήλθε");
+      return;
+    }
+
+    const seconds = Math.floor((timeDifference / 1000) % 60);
+    const minutes = Math.floor((timeDifference / 1000 / 60) % 60);
+    const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+    $(".timer-days .timer-count").text(days);
+    $(".timer-hours .timer-count").text(hours);
+    $(".timer-minutes .timer-count").text(minutes);
+    $(".timer-seconds .timer-count").text(seconds);
+  }
+
+  updateTimer();
+
+  const timerInterval = setInterval(updateTimer, 1000);
 });
