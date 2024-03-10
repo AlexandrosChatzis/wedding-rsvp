@@ -20,8 +20,11 @@ $grid-columns: 12 !default;
 $grid-offsets: true !default;
 $grid-gaps: (
   "0": 0,
-  "1": 12px,
-  "2": 24px,
+  "1": 10px,
+  "2": 20px,
+  "3": 40px,
+  "4": 40px,
+  "5": 50px,
 ) !default;
 
 /* We can have extra column sizes */
@@ -106,7 +109,7 @@ $breakpoints: (
   --pink: #edd8bf;
   /* layout */
   --container-width: 1440px;
-  --container-pad: min(10px, 40px);
+  --container-pad: 40px;
 
   /*--> Place custom settings here <--*/
 }
