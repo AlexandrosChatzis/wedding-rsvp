@@ -27,27 +27,45 @@ input[type="radio"] {
 .section--rsvp {
   position: relative;
   z-index: 1;
-  padding-bottom: 120px;
+  padding-bottom: 200px;
+  @media screen and(max-width:$max-lg) {
+    padding-bottom: 120px;
+  }
   .bottom-bg {
+    background-image: url(../assets/images/wave.svg);
     position: absolute;
     left: 0;
     bottom: 0;
     z-index: -1;
     width: 100%;
     overflow: hidden;
-    > svg {
-      width: 100%;
-      height: 380px;
-      @media screen and(max-width:$max-md) {
-        height: 300px;
-      }
-      .bg-path {
-        fill: #a5aa9c;
-      }
-      .bg-stroke {
-        stroke: #a5aa9c;
-      }
+    height: 580px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media screen and(max-width:$max-lg) {
+      height: 480px;
     }
+    @media screen and(max-width:$max-md) {
+      height: 380px;
+    }
+    // .wave{
+
+    // }
+    // > svg {
+    //   width: 100%;
+    //   height: 380px;
+
+    //   @media screen and(max-width:$max-md) {
+    //     height: 300px;
+    //   }
+    //   .bg-path {
+    //     fill: #a5aa9c;
+    //   }
+    //   .bg-stroke {
+    //     stroke: #a5aa9c;
+    //   }
+    // }
     .shape {
       &-2 {
         max-width: 20%;
@@ -126,11 +144,14 @@ input[type="radio"] {
 
 .rsvp-inner {
   background-color: #fff;
+  border-radius: 20px;
 }
 
 .rsvp-inner-header {
+  background-color: rgba(255, 255, 255, 0.8);
   position: relative;
   top: 20px;
+  border-radius: 20px 20px 0 0;
 }
 
 .rsvp-inner-content {
@@ -140,7 +161,6 @@ input[type="radio"] {
   }
 }
 .rsvp-title {
-  background-color: rgba(255, 255, 255, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -180,6 +200,9 @@ input[type="radio"] {
       left: 0;
       top: 10%;
       z-index: -1;
+      @media screen and(max-width:$max-md) {
+        width: 25%;
+      }
     }
     &-2 {
       position: absolute;
@@ -194,6 +217,9 @@ input[type="radio"] {
       z-index: -1;
       -webkit-transform: translateY(-50%);
       transform: translateY(-50%);
+      @media screen and(max-width:$max-md) {
+        width: 25%;
+      }
     }
   }
 }
