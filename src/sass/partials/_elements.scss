@@ -2,6 +2,23 @@
     SCSS Styles [PARTIALS:ELEMENTS]
    ========================================================================== */
 
-.btn {
+.button {
+  cursor: pointer;
+  font-size: 14px;
+  background: var(--green);
+  color: #fff;
   display: inline-block;
+  font-weight: 500;
+  padding: 10px;
+  border: 0;
+  text-transform: uppercase;
+  z-index: 1;
+  position: relative;
+  transition: all 0.3s;
+  &:disabled {
+    .button-text {
+      display: none;
+    }
+    background: var(--grey);
+  }
 }

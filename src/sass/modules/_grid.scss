@@ -94,12 +94,54 @@
   }
 }
 
+@mixin margins_paddings_builder($media: "") {
+  @if $media != "" {
+    $media: "-#{$media}";
+  }
+
+  /* Generate all gap classes */
+  @each $dName, $dValue in $margins-paddings {
+    .mb#{$media}-#{$dName} {
+      margin-bottom: $dValue !important;
+    }
+
+    .mt#{$media}-#{$dName} {
+      margin-top: $dValue !important;
+    }
+
+    .ml#{$media}-#{$dName} {
+      margin-left: $dValue !important;
+    }
+
+    .mr#{$media}-#{$dName} {
+      margin-right: $dValue !important;
+    }
+
+    .pb#{$media}-#{$dName} {
+      padding-bottom: $dValue !important;
+    }
+
+    .pt#{$media}-#{$dName} {
+      padding-top: $dValue !important;
+    }
+
+    .pl#{$media}-#{$dName} {
+      padding-left: $dValue !important;
+    }
+
+    .pr#{$media}-#{$dName} {
+      padding-right: $dValue !important;
+    }
+  }
+}
+
 /**
  * Generate everything
  */
 
 @include columnsBuilder;
 @include gapsBuilder;
+@include margins_paddings_builder;
 
 /* Generate all responsive steps */
 @each $bname, $bvalue in $breakpoints {
