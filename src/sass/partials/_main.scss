@@ -801,3 +801,8 @@ input[type="radio"] {
     }
   }
 }
+
+.map {
+  overflow: hidden;
+  clip-path: polygon(0 10%, 100% 10%, 100% 100%, 0% 100%);
+}
