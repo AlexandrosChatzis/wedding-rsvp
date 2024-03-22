@@ -113,17 +113,28 @@ $breakpoints: (
   --main-font-family: "Fira Sans Condensed";
   --main-font-size: #{$root-font-size};
   --main-font-color: #323335;
-  --body-background: rgba(107, 107, 107, 0.8);
+  --body-background: #fff;
+
   --white: #fff;
+  --white2: #f1f3ee;
   --black: #000;
+  --black2: #101010;
   --green: #657150;
+  --green2: #a5aa9c;
+  --green3: #bcc1b2;
   --grey: #444;
+  --grey2: #5c5c5c;
   --pink: #edd8bf;
+  --pink2: #e5d1c7;
+  --pink3: #faf2ee;
+  --pink4: #faf2ee59;
+  --boho: #e6cfbd;
+  --primary: var(--green2);
+  --primary-light: var(--green3);
+
   /* layout */
   --container-width: 1440px;
   --container-pad: 40px;
-
-  /*--> Place custom settings here <--*/
 }
 
 /* ==========================================================================

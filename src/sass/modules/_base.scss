@@ -119,3 +119,10 @@ html {
 body {
   background-color: var(--body-background);
 }
+
+a {
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
