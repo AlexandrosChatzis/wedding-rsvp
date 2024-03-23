@@ -12,6 +12,9 @@ module.exports = {
   entry: {
     main: "./src/js/index.js",
   },
+  externals: {
+    jquery: "jQuery",
+  },
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "build"),
@@ -43,11 +46,24 @@ module.exports = {
         },
       ],
     }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src", "js/vendor"),
+          to: "./vendor",
+        },
+      ],
+    }),
     new DefinePlugin({
       "process.env": JSON.stringify(process.env),
     }),
     new ProvidePlugin({
       process: "process/browser",
+    }),
+    new ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery",
     }),
   ],
 };

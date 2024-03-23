@@ -51,3 +51,144 @@
     transform: rotate(360deg);
   }
 }
+
+$animation-duration: 0.8s !default;
+$animation-easing: ease !default;
+$animation-amount: 40px !default;
+$animation-delay: 0.2s !default;
+$animation-appear-background: white !default;
+
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-$animation-amount);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX($animation-amount);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes trembling {
+  0% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+  }
+  40% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    opacity: 1;
+  }
+  60% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: perspective(400px);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY($animation-amount);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-$animation-amount);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.a-trembling {
+  opacity: 0;
+
+  .is-visible & {
+    animation: trembling $animation-duration $animation-delay $animation-easing
+      forwards;
+  }
+}
+.a-fade-in-left {
+  opacity: 0;
+
+  .is-visible & {
+    animation: fade-in-left $animation-duration $animation-delay
+      $animation-easing forwards;
+  }
+}
+
+.a-fade-in-right {
+  opacity: 0;
+
+  .is-visible & {
+    animation: fade-in-right $animation-duration $animation-delay
+      $animation-easing forwards;
+  }
+}
+
+.a-fade-in-up {
+  opacity: 0;
+
+  .is-visible & {
+    animation: fade-in-up $animation-duration $animation-delay $animation-easing
+      forwards;
+  }
+}
+
+.a-fade-in {
+  opacity: 0;
+
+  .is-visible & {
+    animation: fade-in $animation-duration $animation-delay $animation-easing
+      forwards;
+  }
+}
+
+.a-fade-in-down {
+  opacity: 0;
+
+  .is-visible & {
+    animation: fade-in-down $animation-duration $animation-delay
+      $animation-easing forwards;
+  }
+}
+
+// Generate animation delay classes of up to 10s
+// Usage: .a-delay--1
+@for $i from 1 through 10 {
+  .a-delay--#{$i} {
+    animation-delay: ($animation-delay * $i) + 0s !important;
+  }
+}

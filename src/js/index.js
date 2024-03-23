@@ -1,8 +1,7 @@
-import jQuery from "jquery";
 import "../sass/core.scss";
 import "../sass/vendor.scss";
 
-jQuery(document).ready(function ($) {
+$(document).ready(function () {
   $(".form-group input").each(function () {
     var $input = $(this);
     var $customPlaceholder = $input.parent().find(".jsCustomPlaceholder");
@@ -161,4 +160,20 @@ jQuery(document).ready(function ($) {
   updateTimer();
 
   const timerInterval = setInterval(updateTimer, 1000);
+
+  // waypoint animations
+  var $waypoint = $(".js-waypoint");
+  var waypointVisible = "is-visible";
+
+  setTimeout(() => {
+    $waypoint.each(function () {
+      $(this).waypoint({
+        handler: function () {
+          $(this.element).addClass(waypointVisible);
+          this.destroy();
+        },
+        offset: "75%",
+      });
+    });
+  }, 250);
 });

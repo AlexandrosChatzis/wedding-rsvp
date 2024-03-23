@@ -57,7 +57,7 @@ input[type="radio"] {
     }
 
     .shape {
-      &-2 {
+      &-1 {
         max-width: 20%;
         position: absolute;
         left: 0;
@@ -68,7 +68,7 @@ input[type="radio"] {
         }
       }
 
-      &-3 {
+      &-2 {
         max-width: 10%;
         position: absolute;
         left: 27%;
@@ -83,7 +83,7 @@ input[type="radio"] {
         }
       }
 
-      &-5 {
+      &-3 {
         max-width: 10%;
         position: absolute;
         right: 15%;
@@ -98,7 +98,7 @@ input[type="radio"] {
         }
       }
 
-      &-6 {
+      &-4 {
         max-width: 10%;
         position: absolute;
         right: 0;
@@ -202,35 +202,22 @@ input[type="radio"] {
   }
 
   .flower-shape {
-    &-1 {
-      position: absolute;
-      left: 0;
-      top: 10%;
-      z-index: -1;
-
-      @media screen and(max-width:$max-md) {
-        width: 25%;
-      }
-    }
-
+    &-1,
     &-2 {
       position: absolute;
-      left: 0;
-      top: 0;
+      bottom: 0;
       z-index: -1;
-    }
-
-    &-3 {
-      position: absolute;
-      right: 0;
-      top: 50%;
-      z-index: -1;
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%);
 
       @media screen and(max-width:$max-md) {
         width: 25%;
       }
+    }
+
+    &-1 {
+      left: 0;
+    }
+    &-2 {
+      right: 0;
     }
   }
 }
@@ -455,7 +442,7 @@ input[type="radio"] {
     @media screen and(max-width:$max-sm) {
       display: inline-block;
       font-size: 16px;
-      background-color: var(--pink3);
+      background-color: var(--pink5);
       border-radius: 40px;
     }
   }

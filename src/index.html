@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <title>Alexandros & Rania Wedding</title>
+    <script defer src="vendor/jquery-3.6.0.min.js"></script>
+    <script defer src="vendor/waypoints-4.0.1.min.js"></script>
     <link
         href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
         rel="stylesheet" />
@@ -19,28 +21,28 @@
 
 <body>
     <main class="main">
-        <section class="section section--hero">
+        <section class="section section--hero js-waypoint">
             <div class="container--fluid">
                 <div class="hero-wrapper">
-                    <div class="hero-left">
-                        <h1 class="hero-title">Alexandros & Rania</h1><!-- /.hero-title -->
-                        <h2 class="hero-subtitle">Save The Date</h2><!-- /.hero-subtitle -->
-                        <p class="hero-text">Παντρευόμαστε! 7 Σεμπτεμβρίου 2024</p><!-- /.hero-text -->
-                        <div class="hero-leaf">
+                    <div class="hero-left ">
+                        <h1 class="hero-title a-fade-in-left a-delay--1">Alexandros & Rania</h1><!-- /.hero-title -->
+                        <h2 class="hero-subtitle a-fade-in-left a-delay--2">Save The Date</h2><!-- /.hero-subtitle -->
+                        <p class="hero-text a-fade-in-left a-delay--3">Παντρευόμαστε! 7 Σεμπτεμβρίου 2024</p>
+                        <!-- /.hero-text -->
+                        <div class="hero-leaf a-fade-in-left a-delay--4">
                             <img src="./assets/images/hero-leaf.svg" alt="">
                         </div><!-- /.hero-leaf -->
                     </div><!-- /.hero-left -->
                     <div class="hero-right">
-                        <div class="hero-image-wrapper">
-
+                        <div class="hero-image-wrapper a-fade-in-up a-delay--1">
                             <div class="hero-main-image">
                                 <img src="./assets/images/hero-image.jpg" alt="">
                             </div><!-- /.hero-main-image -->
-                            <div class="hero-flower hero-flower--top">
-                                <img src="./assets/images/shape8.svg" alt="">
+                            <div class="hero-flower hero-flower--top a-fade-in-right a-delay--6">
+                                <img src="./assets/images/hero-flower1.svg" alt="">
                             </div>
-                            <div class="hero-flower hero-flower--bottom">
-                                <img src="./assets/images/shape7.svg" alt="">
+                            <div class="hero-flower hero-flower--bottom a-fade-in-left a-delay--6">
+                                <img src="./assets/images/hero-flower2.svg" alt="">
                             </div>
                             <div class="hero-floated-image hero-floated-image--her">
                                 <img src="./assets/images/placeholder-261x261.jpg" alt="">
@@ -51,7 +53,7 @@
                         </div><!-- /.hero-image-wrapper -->
                     </div><!-- /.hero-right -->
                 </div><!-- /.hero-wrapper -->
-                <div class="hero-left-shape">
+                <div class="hero-left-shape a-fade-in a-delay--1">
                     <div class="hero-left-shape-1">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 177 383" fill="none">
                             <path
@@ -67,7 +69,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="hero-right-shapes">
+                <div class="hero-right-shapes a-fade-in a-delay--1">
                     <div class="hero-right-shape-1">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 182 369" fill="none">
                             <path
@@ -85,19 +87,19 @@
                 </div>
             </div><!-- /.container-fluid -->
         </section><!-- /.section section--hero -->
-        <section class="section section--counter">
+        <section class="section section--counter js-waypoint">
             <div class="counter-wrapper">
-                <div class="counter-background">
+                <div class="counter-background a-fade-in a-delay--1">
                     <img src="./assets/images/bg-flower.png" alt="">
                 </div><!-- /.counter-background -->
                 <div class="counter-content">
-                    <h2 class="counter-title">
+                    <h2 class="counter-title a-fade-in-up a-delay--2">
                         Χρόνος
                     </h2><!-- /.counter-title -->
                     <div class="counter-timer">
                         <div class="row gap-1">
                             <div class="col-3 col-xs-6">
-                                <div class="timer timer-days">
+                                <div class="timer timer-days a-fade-in-up a-delay--3">
                                     <div class="timer-count">0</div><!-- /.timer-count -->
                                     <div class="timer-title">
                                         Μέρες
@@ -105,7 +107,7 @@
                                 </div><!-- /.timer timer-days -->
                             </div><!-- /.col-3 col-xs-6 -->
                             <div class="col-3 col-xs-6">
-                                <div class="timer timer-hours">
+                                <div class="timer timer-hours a-fade-in-up a-delay--4">
                                     <div class="timer-count">0</div><!-- /.timer-count -->
                                     <div class="timer-title">
                                         Ώρες
@@ -113,7 +115,7 @@
                                 </div><!-- /.timer timer-hours -->
                             </div><!-- /.col-3 col-xs-6 -->
                             <div class="col-3 col-xs-6">
-                                <div class="timer timer-minutes">
+                                <div class="timer timer-minutes a-fade-in-up a-delay--5">
                                     <div class="timer-count">0</div><!-- /.timer-count -->
                                     <div class="timer-title">
                                         Λεπτά
@@ -121,7 +123,7 @@
                                 </div><!-- /.timer timer-minutes -->
                             </div><!-- /.col-3 col-xs-6 -->
                             <div class="col-3 col-xs-6">
-                                <div class="timer timer-seconds">
+                                <div class="timer timer-seconds a-fade-in-up a-delay--6">
                                     <div class="timer-count">0</div><!-- /.timer-count -->
                                     <div class="timer-title">
                                         Δευτερόλεπτα
@@ -130,20 +132,20 @@
                             </div><!-- /.col-3 col-xs-6 -->
                         </div><!-- /.row -->
                     </div><!-- /.counter-timer -->
-                    <h3 class="counter-subtitle">
+                    <h3 class="counter-subtitle a-fade-in a-delay--7">
                         Μέχρι να παντρευτούμε!
                     </h3><!-- /.counter-subtitle -->
                 </div><!-- /.counter-content -->
             </div><!-- /.counter-wrapper -->
         </section><!-- /.section section--counter -->
         <section class="section section--notebook">
-            <div class="section-header">
-                <h2 class="section-title">
+            <div class="section-header js-waypoint">
+                <h2 class="section-title a-fade-in a-delay--2">
                     Η Ιστορία μας!
                 </h2><!-- /.section-title -->
             </div><!-- /.section-header -->
             <div class="container">
-                <div class="notebook-wrapper">
+                <div class="notebook-wrapper js-waypoint">
                     <div class="notebook-left">
                         <div class="notebook-img">
                             <img src="assets/images/notebook-image1.jpg" alt="">
@@ -151,7 +153,7 @@
                     </div><!-- /.notebook-left -->
                     <div class="notebook-middle">
                     </div><!-- /.notebook-middle -->
-                    <div class="notebook-right">
+                    <div class="notebook-right a-trembling a-delay--2">
                         <div class="notebook-content">
 
                             <div class="thumb">
@@ -177,7 +179,7 @@
                 </div><!-- /.notebook-wrapper -->
 
 
-                <div class="notebook-wrapper notebook--reverse mt-40">
+                <div class="notebook-wrapper notebook--reverse mt-40 js-waypoint">
                     <div class="notebook-left">
                         <div class="notebook-img">
                             <img src="assets/images/notebook-image2.jpg" alt="">
@@ -185,7 +187,7 @@
                     </div><!-- /.notebook-left -->
                     <div class="notebook-middle">
                     </div><!-- /.notebook-middle -->
-                    <div class="notebook-right">
+                    <div class="notebook-right a-trembling a-delay--2">
                         <div class="notebook-content">
 
                             <div class="thumb">
@@ -214,22 +216,19 @@
             <div class="flower-shape-1">
                 <img src="assets/images/flower-shape1.svg" alt="">
             </div>
-            <!-- <div class="flower-shape-2">
+            <div class="flower-shape-2">
                 <img src="assets/images/flower-shape2.svg" alt="">
-            </div> -->
-            <div class="flower-shape-3">
-                <img src="assets/images/flower-shape3.svg" alt="">
             </div>
         </section>
 
-        <section class="section section--important-persons">
+        <section class="section section--important-persons js-waypoint">
             <div class="section-header">
-                <h2 class="section-title">
+                <h2 class="section-title a-fade-in-up a-delay--1">
                     Ο Κουμπάρος
                 </h2><!-- /.section-title -->
             </div><!-- /.section-header -->
             <div class="container">
-                <div class="person-wrapper">
+                <div class="person-wrapper a-fade-in-up a-delay--2">
                     <div class="person-image">
                         <div class="person-mask">
                             <img src="./assets//images/placeholder-260x234.jpg" alt="">
@@ -337,28 +336,27 @@
             </div>
 
             </div><!-- /.container -->
-            <div class="bottom-bg">
-                <div class="shape-2">
+            <div class="bottom-bg js-waypoint">
+                <div class="shape-1 a-fade-in-up a-delay--2">
+                    <img src="assets/images/shape1.svg" alt="">
+                </div>
+                <div class="shape-2 a-fade-in-up a-delay--3">
                     <img src="assets/images/shape2.svg" alt="">
                 </div>
-                <div class="shape-3">
+
+                <div class="shape-3 a-fade-in-up a-delay--4">
                     <img src="assets/images/shape3.svg" alt="">
                 </div>
-
-                <div class="shape-5">
+                <div class="shape-4 a-fade-in-up a-delay--5">
                     <img src="assets/images/shape4.svg" alt="">
-                </div>
-                <div class="shape-6">
-                    <img src="assets/images/shape5.svg" alt="">
                 </div>
             </div>
         </section>
-        <section class="section section--events">
-
+        <section class="section section--events js-waypoint">
             <div class="container container--medium">
                 <div class="row gap-4 gap-sm-2">
                     <div class="col-6 col-md-12">
-                        <div class="event-wrapper">
+                        <div class="event-wrapper a-fade-in-left a-delay--2">
                             <div class="event-img"><img src="./assets/images/church.jpg" alt=""></div>
                             <!-- /.event-img -->
                             <div class="event-title">Εκκλησία</div><!-- /.event-title -->
@@ -378,7 +376,7 @@
                         </div><!-- /.event-wrapper -->
                     </div><!-- /.col-6 col-md-12 -->
                     <div class="col-6 col-md-12">
-                        <div class="event-wrapper">
+                        <div class="event-wrapper a-fade-in-right a-delay--2">
                             <div class="event-img"><img src="./assets/images/hotel.jpg" alt=""></div>
                             <!-- /.event-img -->
                             <div class="event-title">Δεξίωση</div><!-- /.event-title -->
@@ -400,7 +398,7 @@
 
                 </div><!-- /.row -->
             </div><!-- /.container -->
-            <div class="map mt-40 mt-md-20">
+            <div class="map mt-40 mt-md-20 a-fade-in a-delay--3">
                 <iframe
                     src="https://www.google.com/maps/d/embed?mid=15HhVSNEMJ7YMvaF3zm4AgB4L9gavUWM&ehbc=2E312F&z=15&hl=el"
                     width="100%" height="480"></iframe>
