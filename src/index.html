@@ -245,33 +245,40 @@
         </section><!-- /.section section--important-persons -->
 
         <section class="section section--rsvp">
-            <div class="container container--small">
+            <div class="container container--small pl-sm-0 pr-sm-0">
                 <div class="rsvp-outer">
                     <div class="rsvp-inner">
                         <div class="rsvp-inner-header">
 
                             <h2 class="rsvp-title">
-                                Θα παρευρεθείτε;
+                                <p>Παρακαλούμε ενημερώστε μας για την παρουσία ή την απουσία σας μέχρι 18-08-24.</p>
+                                <p>Θα χαρούμε να σας δούμε όλους!</p>
                             </h2>
+
                         </div>
                         <div class="rsvp-inner-content">
 
                             <form action="?" class="rsvp-form" method="POST">
+                                <h3 class="rsvp-question">Ενημερώστε μας για την παρουσία σας στο γάμο</h3>
+
                                 <div class="form-group">
                                     <div class="radio-group-wrapper">
                                         <label>
                                             <input type="radio" name="presence" value="yes">
-                                            <div class="form-label">Ναι θα έρθω</div>
+                                            <div class="form-label">Ναι, δεν το χάνουμε με τίποτα!</div>
                                         </label>
                                         <label>
                                             <input type="radio" name="presence" value="no" checked>
-                                            <div class="form-label">Όχι δεν θα τα καταφέρω</div>
+                                            <div class="form-label">Δυστυχώς δεν θα τα μπορέσουμε να παρευρεθούμε
+                                                <span class="d-inline-block">:(</span>
+                                            </div>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="form-group form-group-input">
                                     <label>
-                                        <div class="form-label jsCustomPlaceholder pointer-none">Ονοματεπώνυμο
+                                        <div class="form-label jsCustomPlaceholder pointer-none">Ονοματεπώνυμο <span
+                                                class="required">*</span>
                                         </div>
                                         <input class="form-control" type="text" name="guest_name"
                                             title="Αυτό το πεδίο είναι υποχρεωτικό" required>
@@ -303,6 +310,10 @@
                                 <div class="form-group">
 
                                 </div>
+                                <div class="form-group">
+                                    <div class="form-messages form-messages--valid jsFormMessage"></div>
+                                    <!-- /.form-messages -->
+                                </div><!-- /.form-group -->
                                 <div class="form-group text-right">
                                     <div class="row gap-1 align-end">
                                         <div class="col-6 col-sm-12">

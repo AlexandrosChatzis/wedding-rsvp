@@ -34,10 +34,20 @@ $(document).ready(function () {
     $("input[type='radio'][name='companion_presence']:checked").val() === "yes"
   ) {
     $("input[name='companion_name']").attr("required", true);
+
+    $("input[name='companion_name']")
+      .parent()
+      .find(".form-label")
+      .html('Ονοματεπώνυμο συνοδού <span class="required">*</span>');
+
     $("input[name='companion_name']").attr("disabled", false);
   } else {
     $("input[name='companion_name']").attr("required", false);
     $("input[name='companion_name']").attr("disabled", true);
+    $("input[name='companion_name']")
+      .parent()
+      .find(".form-label")
+      .html("Ονοματεπώνυμο συνοδού");
   }
 
   $("input[type='radio'][name='presence']").on("change", function () {
@@ -61,16 +71,22 @@ $(document).ready(function () {
   });
 
   $("input[type='radio'][name='companion_presence']").on("change", function () {
+    const companionName = $("input[name='companion_name']");
     if ($(this).val() === "yes") {
-      $("input[name='companion_name']").attr("disabled", false);
-      $("input[name='companion_name']").attr("required", true);
+      companionName.attr("disabled", false);
+      companionName.attr("required", true);
+      companionName
+        .parent()
+        .find(".form-label")
+        .html('Ονοματεπώνυμο συνοδού <span class="required">*</span>');
     } else {
-      $("input[name='companion_name']")
+      companionName
         .attr("disabled", true)
         .parent()
         .find(".jsCustomPlaceholder")
         .removeClass("on-top");
-      $("input[name='companion_name']").attr("required", false).val("");
+      companionName.attr("required", false).val("");
+      companionName.parent().find(".form-label").html("Ονοματεπώνυμο συνοδού");
     }
   });
 
@@ -86,9 +102,17 @@ $(document).ready(function () {
 
   $("form").on("submit", function (event) {
     event.preventDefault();
+    $(".jsFormMessage")
+      .text("")
+      .removeClass("form-messages--valid form-messages--invalid")
+      .hide();
+
     const response = grecaptcha.getResponse();
     if (response === "") {
-      alert("Παρακαλώ επιβεβαιώστε ότι δεν είστε ρομπότ.");
+      $(".jsFormMessage")
+        .addClass("form-messages--invalid")
+        .text("Παρακαλώ επιβεβαιώστε ότι δεν είστε ρομπότ.")
+        .fadeIn();
       return;
     }
     const submitBtn = $(".jsSubmit");
@@ -99,9 +123,11 @@ $(document).ready(function () {
     const formDataArray = $(this).serializeArray();
 
     let formData = {};
-    $.each(formDataArray, function (index, field) {
+    $.each(formDataArray, function (_index, field) {
       formData[field.name] = field.value;
     });
+
+    formData["date"] = new Date().toString();
 
     const { API_KEY, SPREADSHEET_ID, SCOPE } = process.env;
 
@@ -122,15 +148,24 @@ $(document).ready(function () {
             !!response.type &&
             response.type === "SheetsonError"
           ) {
-            alert("Κάτι πήγε στραβά επικοινωνήστε με τον προγραμματιστή.");
+            $(".jsFormMessage")
+              .addClass("form-messages--invalid")
+              .text("Κάτι πήγε στραβά επικοινωνήστε με τον προγραμματιστή.")
+              .fadeIn();
             return;
           }
-          alert("Ευχαριστούμε για την απάντηση σας");
+          $(".jsFormMessage")
+            .addClass("form-messages--valid")
+            .text("Ευχαριστούμε για την απάντηση σας")
+            .fadeIn();
           submitBtn.attr("disabled", false);
           spinner.removeClass("spinner--visible");
         });
     } catch (error) {
-      alert("Κάτι πήγε στραβά επικοινωνήστε με τον προγραμματιστή.");
+      $(".jsFormMessage")
+        .addClass("form-messages--invalid")
+        .text("Κάτι πήγε στραβά επικοινωνήστε με τον προγραμματιστή.")
+        .fadeIn();
     }
   });
 

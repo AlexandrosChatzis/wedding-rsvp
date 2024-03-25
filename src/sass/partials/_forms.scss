@@ -46,6 +46,7 @@
 }
 .radio-group-wrapper {
   display: flex;
+  flex-direction: column;
   margin-left: -10px;
   margin-top: -10px;
   @media screen and(max-width:$max-sm) {
@@ -104,4 +105,26 @@
 }
 .spinner div:nth-child(3) {
   animation-delay: -0.15s;
+}
+
+.form-messages {
+  display: none;
+  border: 5px solid var(--white);
+  outline: 1px solid var(--green);
+  text-align: center;
+  padding: 5px;
+  color: var(--white);
+
+  &--valid {
+    background-color: var(--green);
+  }
+
+  &--invalid {
+    background-color: var(--warning);
+  }
+}
+
+.required {
+  font-size: inherit;
+  color: var(--warning);
 }
