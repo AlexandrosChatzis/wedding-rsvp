@@ -588,7 +588,7 @@ input[type="radio"] {
   }
 
   &-location {
-    display: block;
+    display: inline-block;
     color: var(--primary);
     font-size: 18px;
     text-transform: capitalize;

@@ -2,5 +2,15 @@
     SCSS Styles [PARTIALS:FOOTER]
    ========================================================================== */
 
-.site-footer {
+.footer {
+  background-color: var(--primary);
+  padding: 10px 0;
+  text-align: center;
+}
+.copyright {
+  font-size: 16px;
+  color: var(--white);
+  a:hover {
+    color: var(--black);
+  }
 }
