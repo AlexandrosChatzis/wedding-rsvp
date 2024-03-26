@@ -54,6 +54,7 @@ $utils: (
   "text{-}center": ("text-align", center),
   "text{-}left": ("text-align", left),
   "text{-}right": ("text-align", right),
+  "text{-}justify": ("text-align", justify),
   "float{-}left": ("float", left),
   "float{-}right": ("float", right),
   "overflow{-}hidden": ("overflow", hidden),
@@ -146,5 +147,11 @@ $breakpoints: (
 @media only screen and (max-width: $max-sm) {
   :root {
     --container-pad: 20px;
+  }
+}
+
+@media only screen and (max-width: $max-xs) {
+  :root {
+    --container-pad: 10px;
   }
 }
