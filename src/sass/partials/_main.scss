@@ -22,7 +22,9 @@ input[type="radio"] {
 
   .section-title {
     font-size: 40px;
-    // color: var(--primary);
+    @media screen and(max-width:$max-sm) {
+      font-size: 30px;
+    }
   }
   .section-image {
     width: 100px;
