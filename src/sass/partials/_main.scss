@@ -754,50 +754,48 @@ input[type="radio"] {
       animation: zoom-loop 10s 2s alternate infinite;
     }
   }
-
-  &-floated-image {
+  &-floated-bubble {
     position: absolute;
     border-radius: 50%;
-    overflow: hidden;
-    max-width: 40%;
     z-index: 10;
-  }
+    background-color: var(--green2);
+    width: 40px;
+    height: 40px;
+    display: block;
 
-  &-floated-image--her {
-    top: 0;
-    left: -30px;
-    transform: translateX(-30px);
-    @include vertical-top(translateX(-30px));
-
-    @media screen and(max-width:$max-sm) {
-      left: -25px;
-      transform: translateX(-25px);
-      @include vertical-top(translateX(-25px));
-    }
-
-    @media screen and(max-width:$max-xs) {
+    &--1 {
+      top: 0;
       left: -20px;
       transform: translateX(-20px);
       @include vertical-top(translateX(-20px));
-    }
-  }
 
-  &-floated-image--him {
-    bottom: 0;
-    right: -30px;
-    transform: translateX(30px);
-    @include vertical-bottom(translateX(30px));
-
-    @media screen and(max-width:$max-sm) {
-      right: -25px;
-      transform: translateX(25px);
-      @include vertical-bottom(translateX(25px));
+      @media screen and(max-width:$max-md) {
+        left: -25px;
+        transform: translateX(-25px);
+        @include vertical-top(translateX(-25px));
+      }
+      @media screen and(max-width:$max-sm) {
+        left: -20px;
+        transform: translateX(-20px);
+        @include vertical-top(translateX(-20px));
+      }
     }
 
-    @media screen and(max-width:$max-xs) {
+    &--2 {
+      bottom: 0;
       right: -20px;
       transform: translateX(20px);
       @include vertical-bottom(translateX(20px));
+      @media screen and(max-width:$max-md) {
+        right: -25px;
+        transform: translateX(25px);
+        @include vertical-bottom(translateX(25px));
+      }
+      @media screen and(max-width:$max-sm) {
+        right: -20px;
+        transform: translateX(20px);
+        @include vertical-bottom(translateX(20px));
+      }
     }
   }
 

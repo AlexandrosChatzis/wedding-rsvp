@@ -12,14 +12,14 @@
 }
 
 @mixin vertical-top($transform) {
-  animation: vertical-top 5s infinite;
+  animation: vertical-top 10s infinite;
 
   @keyframes vertical-top {
     0% {
       transform: $transform translateY(0);
     }
     50% {
-      transform: $transform translateY(10%);
+      transform: $transform translateY(100%);
     }
     100% {
       transform: $transform translateY(0);
@@ -28,14 +28,14 @@
 }
 
 @mixin vertical-bottom($transform) {
-  animation: vertical-bottom 5s infinite;
+  animation: vertical-bottom 10s infinite;
 
   @keyframes vertical-bottom {
     0% {
       transform: $transform translateY(0);
     }
     50% {
-      transform: $transform translateY(-10%);
+      transform: $transform translateY(-100%);
     }
     100% {
       transform: $transform translateY(0);
