@@ -117,12 +117,12 @@ $breakpoints: (
   --body-background: #fff;
 
   --white: #fff;
-  --white2: #f1f3ee;
   --black: #000;
   --black2: #101010;
   --green: #657150;
   --green2: #a5aa9c;
   --green3: #bcc1b2;
+  --light-green: #f1f3ee;
   --grey: #444;
   --grey2: #5c5c5c;
   --pink: #edd8bf;
@@ -135,6 +135,7 @@ $breakpoints: (
   --primary-light: var(--green3);
   --warning: #ac1616;
 
+  --radius: 4px;
   /* layout */
   --container-width: 1440px;
   --container-pad: 40px;

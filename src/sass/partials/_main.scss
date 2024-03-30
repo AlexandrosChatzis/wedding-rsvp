@@ -24,6 +24,10 @@ input[type="radio"] {
     font-size: 40px;
     // color: var(--primary);
   }
+  .section-image {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .section--rsvp {
@@ -123,7 +127,7 @@ input[type="radio"] {
 .section--notebook,
 .section--rsvp,
 .section--counter {
-  background-color: var(--white2);
+  background-color: var(--light-green);
 }
 
 .rsvp-outer {
@@ -519,7 +523,7 @@ input[type="radio"] {
 
   &-img {
     border-radius: 50%;
-    background-color: var(--white2);
+    background-color: var(--light-green);
     overflow: hidden;
     padding: 20px;
     width: 258px;
@@ -951,6 +955,48 @@ input[type="radio"] {
           fill: var(--primary);
         }
       }
+    }
+  }
+}
+
+.section--contact-us {
+  background-color: var(--light-green);
+}
+
+.contact {
+  &-wrapper {
+    padding: 40px 0;
+    text-align: center;
+    background-color: var(--white);
+  }
+  &-phone {
+    margin-top: 20px;
+    display: inline-block;
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 10px;
+    border-radius: var(--radius);
+    color: var(--white);
+    font-size: 22px;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: var(--white);
+      color: var(--primary);
+      filter: none;
+    }
+    &:before {
+      content: none;
+    }
+  }
+  &-socials {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: -10px;
+    margin-left: -10px;
+    & > * {
+      margin-top: 10px;
+      margin-left: 10px;
     }
   }
 }
