@@ -58,7 +58,7 @@ $(document).ready(function () {
       if (companionPresence.val() === "yes")
         companionName.attr("disabled", false);
     } else {
-      $("input[name='companion_presence'][value='no'").prop("checked", true);
+      $("input[name='companion_presence'][value='no']").prop("checked", true);
 
       $("input[name='companion_presence']").attr("disabled", true);
       $("input[name='companion_name']")
@@ -67,6 +67,10 @@ $(document).ready(function () {
         .find(".jsCustomPlaceholder")
         .removeClass("on-top");
       $("input[name='companion_name']").attr("required", false).val("");
+      $("input[name='companion_name']")
+        .parent()
+        .find(".form-label")
+        .html("Ονοματεπώνυμο συνοδού");
     }
   });
 
