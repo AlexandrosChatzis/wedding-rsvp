@@ -179,9 +179,17 @@ $(document).ready(function () {
     const currentDate = new Date();
     const timeDifference = futureDate - currentDate;
 
-    if (timeDifference <= 0) {
-      clearInterval(timerInterval);
-      $(".counter-subtitle").text("Παρήλθε");
+    if (timeDifference <= 0 && window.timerInterval) {
+      if (window.timerInterval) {
+        clearInterval(window.timerInterval);
+        window.timerInterval = null;
+      }
+      $(".timer-days .timer-count").text(0);
+      $(".timer-hours .timer-count").text(0);
+      $(".timer-minutes .timer-count").text(0);
+      $(".timer-seconds .timer-count").text(0);
+      $(".counter-title").text("Η ώρα έφτασε!!");
+
       return;
     }
 
@@ -198,7 +206,7 @@ $(document).ready(function () {
 
   updateTimer();
 
-  const timerInterval = setInterval(updateTimer, 1000);
+  window.timerInterval = setInterval(updateTimer, 1000);
 
   // waypoint animations
   var $waypoint = $(".js-waypoint");
